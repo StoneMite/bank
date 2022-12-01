@@ -1,0 +1,20 @@
+from ola import Account
+
+    def main(name,mail,password,balance):
+        name=input("ingrese nombre completo: ")
+        mail=input("ingrese correo: ")
+        password=input("ingrese clave: ")
+        balance=0
+
+print("¿Desea transferir?")
+if transfer=="y":
+    amount=input("ingrese monto: ")
+        if amount<1:
+            print("monto no valido")    
+    balance+=amount
+    print("monto actual: $",balance)
+    
+else:
+    x=Account(name,mail,password,balance)
+    x.imprimir()
+    
