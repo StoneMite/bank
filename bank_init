@@ -1,0 +1,34 @@
+class Account:
+
+    def __init__(self,name,run,mail,password):
+        self.name=name
+        self.run=run
+        self.mail=mail
+        self.password=password
+        self.balance=0
+
+    def print(self):
+        print("nombre: ",self.name)
+        print("rut: ",self.run)
+        print("correo: ",self.mail)
+        print("clave: ",self.password)
+        print("saldo actual: $",self.balance)
+
+    def deposit(self,amount):
+        
+        amount=int(input("coloque monto: "))
+        if amount <= 0 :
+            print("monto no valido")
+        else:    
+            self.balance=self.balance+amount
+            print("saldo actual: $",self.balance)
+            return
+    
+    def withdrawal(self,amount):
+        amount=int(input("coloque retiro: "))
+        if amount > self.balance:
+                print("monto superan saldo actual")
+        else:    
+            self.balance=self.balance-amount
+            print("saldo actual: $",self.balance)
+            return 
