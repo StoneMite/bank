@@ -1,20 +1,26 @@
-from ola import Account
+from banco import Account
 
-    def main(name,mail,password,balance):
-        name=input("ingrese nombre completo: ")
-        mail=input("ingrese correo: ")
-        password=input("ingrese clave: ")
-        balance=0
 
-print("¿Desea transferir?")
-if transfer=="y":
-    amount=input("ingrese monto: ")
-        if amount<1:
-            print("monto no valido")    
-    balance+=amount
-    print("monto actual: $",balance)
-    
-else:
-    x=Account(name,mail,password,balance)
-    x.imprimir()
-    
+def main():
+    name = str(input("ingrese su nombre completo: "))
+    run = str(input("ingrese su rut(sin puntos ni guion): "))
+    mail = str(input("ingrese su correo: "))
+    password = str(input("ingrese su clave: "))
+    amount=0
+    account = Account(name,run,mail,password)
+    account.print()
+
+    while True:
+
+        x = input("Desea DEPOSITAR/RETIRAR(D/R) o cerrar sesion(N): ")
+        if x == "N":
+            break
+        if x == "D":
+            account.deposit(amount)
+        else:
+            account.withdrawal(amount)
+        
+print(__name__)
+
+if __name__ == "__main__":
+    main()
